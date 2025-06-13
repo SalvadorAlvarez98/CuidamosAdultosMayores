@@ -192,3 +192,17 @@ body.dark .contact {
 .circle-btn.instagram { background-color: #e1306c; }
 .circle-btn.facebook { background-color: #3b5998; }
 .circle-btn.email { background-color: #6c757d; }
+
+
+.only-mobile {
+  display: block;         /* visible por defecto */
+}
+.only-desktop {
+  display: none;          /* oculto por defecto */
+}
+
+@media (min-width: 800px) {
+  .only-mobile { display: none; }   /* se esconde en PC */
+  .only-desktop { display: block; } /* se muestra en PC */
+}
+
