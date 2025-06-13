@@ -11,7 +11,7 @@ body {
   font-family: sans-serif;
   background-color: #fefaf6;
   color: var(--text);
-  transition: all 0.5s;
+  transition: all 0.3s;
   background-image: url('fondo-cartoon.png.png');
   background-repeat: repeat;
   background-size: 300px;
@@ -152,12 +152,10 @@ body.dark .contact {
   }
 }
 
-
 /* Imagen de testimonio más pequeña */
 .testimonial-img.small {
-  max-width: 20%;
+  max-width: 40%;
 }
-
 
 .floating-buttons {
   position: fixed;
@@ -169,7 +167,6 @@ body.dark .contact {
   gap: 1rem;
   z-index: 10000;
 }
-
 .circle-btn {
   width: 50px;
   height: 50px;
@@ -183,26 +180,40 @@ body.dark .contact {
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   transition: transform 0.2s;
 }
-
 .circle-btn:hover {
   transform: scale(1.1);
 }
-
 .circle-btn.whatsapp { background-color: #25D366; }
 .circle-btn.instagram { background-color: #e1306c; }
 .circle-btn.facebook { background-color: #3b5998; }
 .circle-btn.email { background-color: #6c757d; }
 
-
 .only-mobile {
-  display: block;         /* visible por defecto */
+  display: block;
 }
 .only-desktop {
-  display: none;          /* oculto por defecto */
+  display: none;
+}
+@media (min-width: 800px) {
+  .only-mobile {
+    display: none;
+  }
+  .only-desktop {
+    display: block;
+  }
 }
 
-@media (min-width: 800px) {
-  .only-mobile { display: none; }   /* se esconde en PC */
-  .only-desktop { display: block; } /* se muestra en PC */
+/* Carrusel en móvil ocupa todo el ancho pero altura limitada */
+.only-mobile .carousel,
+.only-mobile .slides,
+.only-mobile .slide {
+  width: 100vw;
+  max-height: 50vh;
+  object-fit: cover;
+}
+
+/* Aseguramos que los íconos flotantes estén por encima */
+.floating-buttons {
+  z-index: 9999;
 }
 
