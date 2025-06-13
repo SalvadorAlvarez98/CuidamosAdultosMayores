@@ -11,20 +11,15 @@ body {
   font-family: sans-serif;
   background-color: #fefaf6;
   color: var(--text);
-  transition: all 0.3s;
-
-  /* Imagen de fondo para modo claro */
+  transition: all 0.5s;
   background-image: url('fondo-cartoon.png.png');
   background-repeat: repeat;
   background-size: 300px;
   background-attachment: fixed;
   background-position: center;
 }
-
 body.dark {
   background-color: #1a1a1a;
-
-  /* Mismo fondo para modo oscuro */
   background-image: url('fondo-cartoon.png.png');
   background-repeat: repeat;
   background-size: 300px;
@@ -123,21 +118,51 @@ body.dark .contact {
 .facebook { background-color: #3b5998; }
 .email { background-color: #6c757d; }
 
-body.dark .services,
-body.dark .testimonial,
-body.dark .contact {
-  background-color: rgba(18, 18, 18, 0.85); /* Oscuro */
-}
-
-
 @media (max-width: 600px) {
   header {
     flex-direction: column;
     align-items: center;
   }
-
   #toggle-theme {
     position: static;
     margin-top: 0.5rem;
   }
+}
+
+/* NUEVOS ESTILOS PARA COLUMNAS EN PC */
+.section-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.section-content .image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 800px) {
+  .section-content {
+    flex-direction: row;
+  }
+  .section-content .text,
+  .section-content .image {
+    flex: 1;
+  }
+}
+
+.only-pc {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  .only-pc {
+    display: block;
+  }
+}
+
+/* Imagen de testimonio más pequeña */
+.testimonial-img.small {
+  max-width: 20%;
 }
