@@ -217,3 +217,21 @@ body.dark .contact {
   z-index: 9999;
 }
 
+
+footer {
+  background-color: #222;
+  color: #eee;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+body.dark footer {
+  background-color: #111;
+  color: #ccc;
+}
+
+.footer-content p {
+  margin: 0.2rem 0;
+}
