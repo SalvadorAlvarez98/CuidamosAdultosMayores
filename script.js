@@ -110,3 +110,32 @@ document.addEventListener('DOMContentLoaded', () => {
     else if (e.key === "Escape") closeLightbox();
   });
 });
+
+
+// Soporte para swipe en lightbox
+let touchStartX = 0;
+let touchEndX = 0;
+
+const lightboxContainer = document.getElementById('lightbox');
+
+lightboxContainer.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+lightboxContainer.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipeGesture();
+});
+
+function handleSwipeGesture() {
+  const swipeThreshold = 50; // mínimo en px para contar como swipe
+  const delta = touchEndX - touchStartX;
+
+  if (Math.abs(delta) > swipeThreshold) {
+    if (delta < 0) {
+      changeLightboxImage(1);  // Swipe hacia la izquierda → siguiente
+    } else {
+      changeLightboxImage(-1); // Swipe hacia la derecha → anterior
+    }
+  }
+}
