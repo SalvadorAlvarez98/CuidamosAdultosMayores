@@ -339,27 +339,36 @@ body.dark .testimonial-carousel {
 .lightbox .caption {
   color: white;
   font-style: italic;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 0 1rem;
 }
 
 .lightbox-prev,
 .lightbox-next {
   position: absolute;
-  bottom: 10px;
-  background: #444;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
   color: white;
   border: none;
   font-size: 2rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.9rem;
   border-radius: 50%;
   cursor: pointer;
+  z-index: 10;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(0,0,0,0.9);
 }
 
 .lightbox-prev {
-  left: 20%;
+  left: -60px;
 }
+
 .lightbox-next {
-  right: 20%;
+  right: -60px;
 }
 
 #lightbox-close {
@@ -372,4 +381,37 @@ body.dark .testimonial-carousel {
   padding: 0.3rem 0.6rem;
   border-radius: 50%;
   cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+  .lightbox-content img {
+    max-height: 50vh;
+  }
+
+  .lightbox .caption {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    font-size: 1.5rem;
+    padding: 0.4rem 0.7rem;
+    top: 45%;
+  }
+
+  .lightbox-prev {
+    left: 5px;
+  }
+
+  .lightbox-next {
+    right: 5px;
+  }
+
+  #lightbox-close {
+    top: 5px;
+    right: 10px;
+    font-size: 1.2rem;
+  }
 }
