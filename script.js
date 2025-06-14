@@ -17,7 +17,7 @@ function iniciarCarrusel(selector) {
   }
 
   showSlide(); // Mostrar la primera
-  setInterval(showSlide, 2000);
+  setInterval(showSlide, 5000);
 }
 
 // Iniciar ambos carruseles si existen
