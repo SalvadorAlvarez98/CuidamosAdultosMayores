@@ -415,3 +415,32 @@ body.dark .testimonial-carousel {
     font-size: 1.2rem;
   }
 }
+
+.testimonial-video {
+  margin: 1.5rem auto;
+  max-width: 700px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.testimonial-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+
+body.dark .testimonial-video {
+  background-color: rgba(18, 18, 18, 0.85);
+}
+
+.testimonial-video {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 1.5rem auto;
+  max-width: 700px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
